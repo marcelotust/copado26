@@ -1,0 +1,43 @@
+name: copado26
+description: World Cup 2026 sticker album manager with OCR scanning.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Local database — works on web (IndexedDB) + mobile (file)
+  hive_flutter: ^1.1.0
+
+  # State management
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+
+  # DI
+  get_it: ^8.0.2
+
+  # Utils
+  collection: ^1.18.0
+
+  # --- Native-only (mobile/desktop) ---
+  # camera and mlkit are imported only via conditional platform files;
+  # flutter will not compile them on web.
+  camera: ^0.11.0+2
+  google_mlkit_text_recognition: ^0.14.0
+  permission_handler: ^11.3.1
+  path_provider: ^2.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
